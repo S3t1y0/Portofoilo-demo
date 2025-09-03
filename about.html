@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<head>
+  <title>About Me - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 20px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1e3a8a;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ef4444;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #ef4444;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+
+      .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e3a8a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      margin-top: 10px;
+      align-self: start;
+    }
+
+    .footer-icon {
+      display: flex;
+      margin-right: 10px;
+      padding: 10px;
+      gap: 30px;
+    }
+
+    .footer-icon a {
+      transition: all 0.3s ease;
+      font-size: 25px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .footer-icon a:hover {
+      transform: translateY(-5px) scale(1.1);
+      color: #ef4444;
+    }
+
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .section:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .section:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    .section:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #ef4444;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
+
+    .bio-item {
+      margin-bottom: 15px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .bio-item:hover {
+      transform: translateX(5px);
+      background-color: #f8fafc;
+    }
+
+    .bio-item strong {
+      display: inline-block;
+      width: 120px;
+      color: #475569;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background-color: #f8fafc;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      background-color: #e2e8f0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .tool {
+      text-align: center;
+      width: 80px;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+
+    .tool:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #1e3a8a;
+      transition: transform 0.3s ease;
+    }
+
+    .tool:hover i {
+      transform: scale(1.2);
+      color: #ef4444;
+    }
+
+    .tool-name {
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .tool:hover .tool-name {
+      color: #ef4444;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+      
+      .about-container {
+        margin: 20px auto;
+      }
+      
+      .tools {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">MyPortfolio</div>
+    <ul class="nav-links">
+      <li><a href="Latihan.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Skills.html">Skills</a></li>
+      <li><a href="Projects.html">Project</a></li>
+      <li><a href="Experience.html">Experience</a></li>
+    </ul>
+  </nav>
+
+  <div class="about-container">
+    <div class="section">
+      <h1>Tentang Saya</h1>
+      <p>Halo! Saya Setiyo Nugroho Caniago, seorang siswa RPL (Rekayasa Perangkat Lunak) dengan fokus pada pengembangan web.</p>
+    </div>
+
+    <div class="section">
+      <h2>Biodata Singkat</h2>
+      <div class="bio-item">
+        <strong>Nama Lengkap:</strong> Setiyo Nugroho Caniago
+      </div>
+      <div class="bio-item">
+        <strong>Tempat Lahir:</strong> Demak
+      </div>
+      <div class="bio-item">
+        <strong>Tanggal Lahir:</strong> 25 Agustus 2008
+      </div>
+      <div class="bio-item">
+        <strong>Pendidikan:</strong> Siswa RPL di SMKN 40 Jakarta
+      </div>
+      <div class="bio-item">
+        <strong>Email:</strong> tiyocaniago@gmail.com
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Minat & Keahlian</h2>
+      <p>Beberapa bidang yang saya minati dan kuasai:</p>
+      <div class="skills-list">
+        <div class="skill">Web Development</div>
+        <div class="skill">Frontend</div>
+        <div class="skill">UI/UX Design</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML/CSS</div>
+        <div class="skill">Responsive Design</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Tools yang Dikuasai</h2>
+      <p>Berikut beberapa tools yang sering saya gunakan dalam pengembangan:</p>
+      <div class="tools">
+        <div class="tool">
+          <i class="fab fa-html5"></i>
+          <div class="tool-name">HTML5</div>
+        </div>
+        <div class="tool">
+          <i class="fab fa-css3-alt"></i>
+          <div class="tool-name">CSS3</div>
+        </div>
+        <div class="tool">
+          <i class="fab fa-js"></i>
+          <div class="tool-name">JavaScript</div>
+        </div>
+        <div class="tool">
+          <i class="fas fa-code"></i>
+          <div class="tool-name">VS Code</div>
+        </div>
+        <div class="tool">
+          <i class="fab fa-figma"></i>
+          <div class="tool-name">Figma</div>
+        </div>
+        <div class="tool">
+          <i class="fas fa-server"></i>
+          <div class="tool-name">Laragon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+<div class = "footer-copyright">
+ <p>&copy; 2023 Setiyo Nugroho Caniago. All Rights Reserved.</p>
+ </div>
+  <div class = "footer-icon">
+    <a href="https://instagram.com>" target="_blank"> 
+    <i class="fab fa-instagram"> </i>
+    </a>
+    <a href="https://linkedin.com" target="_blank">
+    <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com" target="_blank">
+    <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank">
+    <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bioItems = document.querySelectorAll('.bio-item');
+      
+      bioItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-10px)';
+        item.style.transition = 'all 0.4s ease ' + (index * 0.1) + 's';
+        
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateX(0)';
+        }, 100);
+      });
+    });
+  </script>
+</body>
+</html>
