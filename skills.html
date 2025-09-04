@@ -223,6 +223,41 @@
       font-size: 14px;
     }
 
+          .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e3a8a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      margin-top: 10px;
+      align-self: start;
+    }
+
+    .footer-icon {
+      display: flex;
+      margin-right: 10px;
+      padding: 10px;
+      gap: 30px;
+    }
+
+    .footer-icon a {
+      transition: all 0.3s ease;
+      font-size: 25px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .footer-icon a:hover {
+      transform: translateY(-5px) scale(1.1);
+      color: #ef4444;
+    }
+
+
     @media (max-width: 768px) {
       .navbar {
         padding: 15px 20px;
@@ -383,6 +418,24 @@
         </div>
       </div>
     </div>
+      <div class="footer">
+<div class = "footer-copyright">
+ <p>&copy; 2023 Setiyo Nugroho Caniago. All Rights Reserved.</p>
+ </div>
+  <div class = "footer-icon">
+    <a href="https://instagram.com>" target="_blank"> 
+    <i class="fab fa-instagram"> </i>
+    </a>
+    <a href="https://linkedin.com" target="_blank">
+    <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com" target="_blank">
+    <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank">
+    <i class="fab fa-twitter"></i>
+    </a>
+  </div>
   </div>
 
   <script>
@@ -400,3 +453,4 @@
 </body>
 
 </html>
+
