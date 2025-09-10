@@ -171,7 +171,7 @@
       }
     }
 
-    .buttons {
+.buttons {
       margin-top: 30px;
       opacity: 0;
       animation: fadeIn 0.8s ease forwards 1.1s;
@@ -203,10 +203,16 @@
       background-color: transparent;
       border: 1px solid #cbd5e1;
       color: #1e293b;
+      text-decoration: none;
+    }
+
+    .buttons .hire a
+    {
+      text-decoration: none;
+      color: #1e293b;
     }
 
     .buttons .hire:hover {
-      background-color: #f1f5f9;
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(203, 213, 225, 0.4);
     }
@@ -287,8 +293,9 @@
         Saya adalah siswa RPL yang fokus pada web development
       </p>
       <div class="buttons">
-        <button class="learn">Lihat Proyek Saya</button>
-        <button class="hire">Download CV</button>
+         <button class="hire">
+         <a href="Porto.txt" download> Download CV </a>
+        </button>
       </div>
     </div>
     <div class="right">
@@ -318,6 +325,7 @@
 
 </body>
 </html>
+
 
 
 
